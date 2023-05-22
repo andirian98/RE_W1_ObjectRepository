@@ -1,0 +1,13 @@
+﻿{
+  "Id": "DZbuBpXIM0GThhsfc3RL1A",
+  "Reference": "H4rpYSnGxECKWRw3OdvvNQ/DZbuBpXIM0GThhsfc3RL1A",
+  "ParentRef": "H4rpYSnGxECKWRw3OdvvNQ/ONVfyAw3A0WfQKLZ20WHRQ",
+  "Name": "New Status",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Created": "2022-12-28T07:36:21.2010939Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.12.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-12-28T07:36:21.2010939Z"
+}

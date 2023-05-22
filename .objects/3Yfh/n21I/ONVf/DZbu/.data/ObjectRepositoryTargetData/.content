@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="GsBAR6ex3kCp0enZ0nd5XQ" Reference="H4rpYSnGxECKWRw3OdvvNQ/DZbuBpXIM0GThhsfc3RL1A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://acme-test.uipath.com/work-items/update/87746181" DesignTimeRectangle="343, 496, 8, 4" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl class='caret' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='caret' tag='SPAN' type='' aaname='' /&gt;" Guid="bd3eca36-9918-4b12-8978-1fd04a530111" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAAwAAAAICAYAAADN5B7xAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA6SURBVChTY/hPIiBfw5kzZ/7PnDkTKwbJwQCKDdg0ISsGAQwnIWtCVwwCWP0AUohNMQiQ72niwP//APPha3DOc7gTAAAAAElFTkSuQmCC" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WI-Update' title='ACME System 1' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="144, 456, 80, 20" ElementType="Text" FriendlyName="'New Status'" FullSelectorArgument="&lt;webctrl aaname='New Status:' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='New Status:' tag='LABEL' type='' class='' check:innerText='New Status:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFQAAAAYCAYAAABk8drWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIPSURBVGhD7ZXtjYMwDIZvJ+Yqq6BuApNU/LghKnWHnPNhx7FDoDr37o9fyaoA1x+PHfgKLlM5UGM5UGM5UGM5UGM5UGM5UGMR0Nc2h2mawnRbw6vcS3os+f59Lzc+r/0O+WLOYsujPEDFmt6q5xXW2xzWZ7n8oDRQsHljSP8YKK+DG0F9u54IM8b4R6BN8k4D1333sBz4NEMj6eYpV4yJ8ckWyBCFearlAWC8ajEvxqw1oB/Gi5Ix24HgKZKn5wAoGEIRkJRfMtEYvjaea5iLDxafC2mL46LjLl89UV2gGtro2TWgo5hZl4HO207BknMDtDNJsXEcWAM//V8A70lB442DxIC1sEYcmrzmvZ4BZX1eVAcoJKGmIGDTgD5aZGKD4zAy3CUs5XfHjT2EUcQ2W8YfAaXtTvYboNWHbLQETH2gICxuhq9jCngGVB7zO4BMv3DwUuwZwOZY8piMVBsrzSqgEtjZte619qU3sj+kYx0CVfBSA3qSWuiTLcVrNm70315j4p4EirFpg9D/HCjF4Ccy31HSfPoaAAVRopqcihHGt676YBNsOLRZfbUbwUw1Hw3if3deD/isAVosxmlicEOgYpnI6lCwzgsfJT4BVgwDIaGqqXUmTq+QkwlHKajNEDig3GBTDwNGuTqLwXPUD3HvZFTj8E6BumzkQI3lQI3lQI3lQI3lQI3lQE0Vwg81JlNlqInd3wAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="7ae276efcc855b28349113791fc8cb2b.png" xmlns="">0w4yiX8oDY0KcErkV2gz_Iw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

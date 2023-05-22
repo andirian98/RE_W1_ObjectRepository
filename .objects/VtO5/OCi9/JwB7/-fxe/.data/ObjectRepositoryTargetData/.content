@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="AwObkpX4T0uw47WPL_gvUg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="185, 242, 383, 24" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'WindowsForms10.EDIT.app…'" FullSelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='textBox2' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='textBox2' /&gt;" Guid="0d1b22d5-cba6-43cb-bc1a-c6b6a09aa69e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAYMAAAAcCAYAAACDI9MwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADKSURBVHhe7dU7DoMwEEXR7J0dsD9aoOAnUSBRMLFpUljKAuxzpNtNPe9zHEdIktrOGEiSfmOw73ssyyJJaqBxHGOe53IM1nWN+77jeR5JUuWd5/kOQjEGeSnyAQD1u67LGAC0zhgAYAwAMAYAJMYAAGMAgDEAIDEGABgDAIwBAIkxAMAYAGAMAEiMAQDGAABjAEBiDAAwBgAYAwCSv2MwDMM7CJKkusv/fpqmcgy2bYu+76PrOklS5eV/n/9+MQaSpHYzBpLUfEd8AcdN+PawWSbBAAAAAElFTkSuQmCC" ScopeSelectorArgument="&lt;wnd app='acme-system3.exe' ctrlname='Login' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="184, 221, 61, 15" ElementType="Text" FriendlyName="'Password'" FullSelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='label2' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='label2' check:text='Password' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEEAAAATCAYAAADPsWC5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFxSURBVFhH7ZThjQQhCIWtynroxmLsxVrsgH2oOOjqXnZzl8xl/fGSEVDgG9HlnPnbdSBABwJ0IEAHAnQgQBsIkck5doM8e4qL2LtLevEc0spX9QLCtDFVMBSN7V/oNyFAkRz7kAbb/fVnNwHffhwV6nASB+O7RmhtF7BOY1Jgb/Km4LsvRYJP9yNfbPnaHiLEOuI4xXrY7ZkrvfUmXI1OQiGkBZjCLbidPaNg5wMn3Qt7vW0VWomZ4Axr/R6g0AUyTnsXemscrFIA7ek2XEVh7QnQIic9Y2cvuQRgazogrkBR+wSwqY9ma1rixP4c+3Mvn0Eofw+Jh0bG+IS/HQQUGreP6couDVG0MHCW5NBRuCOEmqhe4bIuM1jjtYjqQ0Ot2J29nCn70fjQNCB1f2nU1GPXE4Tyg2TdYqW2fks1ZtKH4yBN1EJLsXRBePYprJ1dJPnMjVkU/vphNBAktt20msfWttYGwnfpQIAOBOhAyJkfQ77ZYgO5fHUAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="5c9359761e4f3a3104c2f4b5553a3be8.png" xmlns="">0fgQxsuIy5kuvkwNDSIqqew</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

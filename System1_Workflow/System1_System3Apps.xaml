@@ -1,0 +1,576 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="System1_System3Apps" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_FolderPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_AssetName" Type="InArgument(x:String)" />
+    <x:Property Name="in_ClientID" Type="InArgument(x:String)" />
+    <x:Property Name="out_totalAmt" Type="OutArgument(x:Decimal)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1240,7405</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>System1_System3Apps_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="37">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="100">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="System1_System3Apps" sap:VirtualizedContainerService.HintSize="833,7340" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="username" />
+      <Variable x:TypeArguments="ss:SecureString" Name="password" />
+      <Variable x:TypeArguments="x:Boolean" Name="checked_input" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="WindowsformsSyslistv" />
+      <Variable x:TypeArguments="sd:DataTable" Name="data_table" />
+      <Variable x:TypeArguments="x:String" Name="client_id" />
+      <Variable x:TypeArguments="x:Decimal" Name="total_amt" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:GetRobotCredential AssetName="[in_AssetName]" CacheStrategy="None" DisplayName="Get Credential" FolderPath="[in_FolderPath]" sap:VirtualizedContainerService.HintSize="791,168" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[password]" Username="[username]">
+      <ui:GetRobotCredential.TimeoutMS>
+        <InArgument x:TypeArguments="x:Int32" />
+      </ui:GetRobotCredential.TimeoutMS>
+    </ui:GetRobotCredential>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="ACME System3" sap:VirtualizedContainerService.HintSize="791,6753" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="c279c483-3592-4dbe-90aa-1581ab31704e" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="757,6462" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="outputRegex" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Username'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="715,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="c279c483-3592-4dbe-90aa-1581ab31704e" Text="[username]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="nkiNIcn--ECundqmAPrgBw" DesignTimeRectangle="185, 192, 383, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Username'" FullSelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='textBox1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='textBox1' /&gt;" Guid="23619421-5457-408b-9422-653f341b7c4d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAYMAAAAcCAYAAACDI9MwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC6SURBVHhe7dWxDUIhGIXRN42ruYTD2TmF2ryYqI9AT4FQWcAEcE7yVVD/d0spFUnS2hkDSdJ/DGKMJYRQjuOQJE1eu/fP17cfg/aYcy4AzK/d+8f+GY8BAOu4729jALA6YwCAMQDAGABQGQMAjAEAxgCAyhgAYAwAMAYAVMYAAGMAgDEAoDIGABgDAIwBAJUxAMAYAGAMAKiGY7Cdr5KkxerG4HS5DT9Kkuas3f1uDCRJ62YMJGn5UvkBwLawdps4JAEAAAAASUVORK5CYII=" InformativeScreenshot="1ee19f3c642c31722b12e88fdbea920f.png" IsResponsive="True" Reference="H4rpYSnGxECKWRw3OdvvNQ/Hmv5tJJGFUKTQ927X3RT5A" ScopeSelectorArgument="&lt;wnd app='acme-system3.exe' ctrlname='Login' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="184, 171, 65, 15" ElementType="Text" FriendlyName="'Username'" FullSelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='label1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='label1' check:text='Username' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEUAAAATCAYAAADGWsDDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFdSURBVFhH7ZTLmcUgCIWtinrsxmLshVrSgXM06FUD+W4yuxkWZ6E8xB80HMdRXKsciiKHosihKHIoihyKIgNKLjFQSbztcyoUYsnz3h+UQ1HkUBT9AgqXRKGEcIpiHn6cI/y6jUrMPMVjHQn7yCP5Uvr4UxLfWsOUv+XpNiOO1Tw39Rh6DYUTLtZBcPUPOEx8KOHCPSY3eMNW8y6Q6gVy4bFWzhVb7A3Z4+TSa57J16qnrhW9nxQpLFBEB1GM+DZYdX9T69wcv+drWs9tnd+mpdnUOD3PbT3Df5UB5XwaF5roSAD11g0RV/IyttV/maBdT6C0s2ATQIvtKRSrHkMGFEmmjF0n3A87AQFinKcBBY0nggKX5/MdlDP/pwHnv/Acym09w3+VCaWKM94xPkUiKOJjWz6oCgKF93FcLoBCxthfP8hvoFzzv4SCtVmPoVso/1UORZFDUeRQLjrKD0r5+Xxud2fOAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="715,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="c279c483-3592-4dbe-90aa-1581ab31704e" SecureText="[password]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="AwObkpX4T0uw47WPL_gvUg" DesignTimeRectangle="185, 242, 383, 24" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'Password'" FullSelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='textBox2' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='textBox2' /&gt;" Guid="0d1b22d5-cba6-43cb-bc1a-c6b6a09aa69e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAYMAAAAcCAYAAACDI9MwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADKSURBVHhe7dU7DoMwEEXR7J0dsD9aoOAnUSBRMLFpUljKAuxzpNtNPe9zHEdIktrOGEiSfmOw73ssyyJJaqBxHGOe53IM1nWN+77jeR5JUuWd5/kOQjEGeSnyAQD1u67LGAC0zhgAYAwAMAYAJMYAAGMAgDEAIDEGABgDAIwBAIkxAMAYAGAMAEiMAQDGAABjAEBiDAAwBgAYAwCSv2MwDMM7CJKkusv/fpqmcgy2bYu+76PrOklS5eV/n/9+MQaSpHYzBpLUfEd8AcdN+PawWSbBAAAAAElFTkSuQmCC" InformativeScreenshot="5c9359761e4f3a3104c2f4b5553a3be8.png" Reference="H4rpYSnGxECKWRw3OdvvNQ/-fxeWa3aSEeNNEnAdNZvVQ" ScopeSelectorArgument="&lt;wnd app='acme-system3.exe' ctrlname='Login' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="184, 221, 61, 15" ElementType="Text" FriendlyName="'Password'" FullSelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='label2' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='label2' check:text='Password' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEEAAAATCAYAAADPsWC5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFxSURBVFhH7ZThjQQhCIWtynroxmLsxVrsgH2oOOjqXnZzl8xl/fGSEVDgG9HlnPnbdSBABwJ0IEAHAnQgQBsIkck5doM8e4qL2LtLevEc0spX9QLCtDFVMBSN7V/oNyFAkRz7kAbb/fVnNwHffhwV6nASB+O7RmhtF7BOY1Jgb/Km4LsvRYJP9yNfbPnaHiLEOuI4xXrY7ZkrvfUmXI1OQiGkBZjCLbidPaNg5wMn3Qt7vW0VWomZ4Axr/R6g0AUyTnsXemscrFIA7ek2XEVh7QnQIic9Y2cvuQRgazogrkBR+wSwqY9ma1rixP4c+3Mvn0Eofw+Jh0bG+IS/HQQUGreP6couDVG0MHCW5NBRuCOEmqhe4bIuM1jjtYjqQ0Ot2J29nCn70fjQNCB1f2nU1GPXE4Tyg2TdYqW2fks1ZtKH4yBN1EJLsXRBePYprJ1dJPnMjVkU/vphNBAktt20msfWttYGwnfpQIAOBOhAyJkfQ77ZYgO5fHUAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Login'" sap:VirtualizedContainerService.HintSize="512,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c279c483-3592-4dbe-90aa-1581ab31704e" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="Ka3ciM28aES8w6Wbm9v64g" DesignTimeRectangle="293, 281, 133, 33" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Login'" FullSelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='button1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='button1' check:text='Login' /&gt;" Guid="f71ac04e-19da-4c2e-a71f-8675f1267ec2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIkAAAAlCAYAAAB2+spcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHBSURBVHhe7dtBbsIwEIVhX8sH8nlyGm9A3CBIUVbIBwCBssgahKaZlCiT2M1IVTfNvMUnFRy88S/HXdj1fU8AWxAJqBAJqLJIuq6jy+VCbdtS0zRgSEppXP91E4tI+AGO43a70ev1ovf7DUbwet/v93H916EsIuGSHo9HcRKw4Xq9jm8S2cUiEt5yns9n8cdgA68/7yayiyyS0g/BFu5AdoFIIINIQIVIQIVIQIVIQIVIQIVIQGUgkkjBeapSaey3eM5AsTi2P4gEVIgEVOYjSTGQd47cyFOIqTzm/fD3NI943aRq+D5QVc3P+mqeYw9sRzIusBiTn6fF/4ylKJ9dR8JhREqlOXfAdCSp8uRCXHwXw/dOkI/JefKdZD7EbkT5TyESRKIyHUn2apCfh/OI48X/jPH5hM8siGS3kUwHU+GzS2weXOVhNASx+IhkZ5H8kfHgKmOwA5H8aNgR/LTDDPz8n441iARUiARUiARUiARUm5HwfQvcu7GN138zEr65xTe4Sj8GG/iqJ9/klF0sIpnuAvOD2FFs4fXmDUK9C8z4gfP5TMfjkQ6HAxhxOp2orussEJZFArCGSECFSEDR0xf2BTIB1tBMVQAAAABJRU5ErkJggg==" InformativeScreenshot="38dff5bdbe3960b36bfef4b16380b41b.png" Reference="H4rpYSnGxECKWRw3OdvvNQ/Cu_JW7vpMkaiW8sri0V7Kg" ScopeSelectorArgument="&lt;wnd app='acme-system3.exe' ctrlname='Login' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="512,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <uix:NClick ClickType="Single" DisplayName="Click 'Clients Add'" sap:VirtualizedContainerService.HintSize="512,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c279c483-3592-4dbe-90aa-1581ab31704e" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="94, 32, 55, 22" DesignTimeScaleFactor="1" FriendlyName="'Clients Add'" FullSelectorArgument="&lt;wnd ctrlname='menuStrip1' /&gt;&lt;ctrl name='menuStrip1' role='menu bar' /&gt;&lt;ctrl name='Clients' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='menuStrip1' /&gt;&lt;ctrl name='menuStrip1' role='menu bar' /&gt;&lt;ctrl name='Clients' role='menu item' automationid='' check:fulltext='Clients&amp;#xD;&amp;#xA;Add New Client&amp;#xD;&amp;#xA;Search For Client&amp;#xD;&amp;#xA;By Name&amp;#xD;&amp;#xA;By Client ID&amp;#xD;&amp;#xA;Auto Save&amp;#xD;&amp;#xA;Delete Client' /&gt;" Guid="88b5eeef-7d11-4fac-8ca4-812273b000ed" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADsAAAAaCAYAAAAJ1SQgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAESSURBVFhH7ZVRDsIgDEA5FffhNhyGu3AUCfHHr7qVskAFFaIzAh8vYYwSXls2cbneYBaE9x5mYcmOypIdlSU7Kp2yFrQUIAQhNVicN6CEBG23sdUg4/gh/je0y6KEAGXyOY3PiWwa08Un9wo0yoaKZqIZI8liVRWY0jskPSA7LHVEaP24B63R6rgSUluaj2s3lNnm8qtTT3iddtnjfpaoyTJxo3IplAnzD4lIYo51nZxT2ayqBB6cCdXi93e0R0hSXN/GF+8sly0lqUGWsFqe1MY72GrvfI35uFQVLlSLz9mFeyrcLrvD27L0n+WH5TEv29iDUclaSnLg2VWq0yf7pyzZUVmyo7JkR2UuWecczIGDO/hZ+qvdfFOIAAAAAElFTkSuQmCC" InformativeScreenshot="09b4de10506f8ab2ad8c6ce7ec09f8cd.png" ScopeSelectorArgument="&lt;wnd app='acme-system3.exe' ctrlname='Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Search For'" sap:VirtualizedContainerService.HintSize="512,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c279c483-3592-4dbe-90aa-1581ab31704e" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="-309, -125, 0, 0" DesignTimeScaleFactor="1" FriendlyName="'Search For'" FullSelectorArgument="&lt;wnd ctrlname='menuStrip1' /&gt;&lt;ctrl name='menuStrip1' role='menu bar' /&gt;&lt;ctrl name='Clients' role='menu item' /&gt;&lt;ctrl name='Search For Client' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='menuStrip1' /&gt;&lt;ctrl name='menuStrip1' role='menu bar' /&gt;&lt;ctrl name='Clients' role='menu item' /&gt;&lt;ctrl name='Search For Client' role='menu item' automationid='' check:fulltext='Search For Client&amp;#xD;&amp;#xA;By Name&amp;#xD;&amp;#xA;By Client ID' /&gt;" Guid="5b1eb6a7-135a-46ba-99f9-fa25d08fa90e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADsAAAAaCAYAAAAJ1SQgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEQSURBVFhH7ZXBDcMgDACZin3YxsOwC6tEZAA3gInAgbagNlWBx0mEYMTZJhH7vuMsCGstzsKSHZUlOypLdlQ6ZQ2CFCgEIQGNn9eohEQwx9gAyji+xP+GdlkvIVDpfA78cyKbxnTxyb0CjbKhoploxkiyvqoKdemdJz0gOyx1RGj9uAetAXVeCQmG5uPaA6WPufzq1BNep132vJ8larJMXKtcysuE+UsikphzXSf3VDarKuEPzoRq8e4d7RGSFNe38cU7y2VLSWqQJQzIm9rY4Vvtna8xH5eqwoVq8TlOuKfC7bIO3pal/yw/LI952cYWtUrWUpIDz65SnT7ZP2XJjsqSHZUlOypzyW7bhnOw4QOm2/n6q0mp+AAAAABJRU5ErkJggg==" ScopeSelectorArgument="&lt;wnd app='acme-system3.exe' ctrlname='Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DisplayName="Click 'By Client ID'" sap:VirtualizedContainerService.HintSize="512,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c279c483-3592-4dbe-90aa-1581ab31704e" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="-309, -125, 0, 0" DesignTimeScaleFactor="1" FriendlyName="'By Client ID'" FullSelectorArgument="&lt;wnd ctrlname='menuStrip1' /&gt;&lt;ctrl name='menuStrip1' role='menu bar' /&gt;&lt;ctrl name='Clients' role='menu item' /&gt;&lt;ctrl name='Search For Client' role='menu item' /&gt;&lt;ctrl name='By Client ID' role='menu item' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='menuStrip1' /&gt;&lt;ctrl name='menuStrip1' role='menu bar' /&gt;&lt;ctrl name='Clients' role='menu item' /&gt;&lt;ctrl name='Search For Client' role='menu item' /&gt;&lt;ctrl name='By Client ID' role='menu item' automationid='' check:fulltext='By Client ID' /&gt;" Guid="f57b061a-5f2a-41ff-a55a-44f01e6f26c1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADsAAAAaCAYAAAAJ1SQgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEjSURBVFhH7ZXBrcMgDEA9FfuwRUdgGHbh2DGKUC//5AYDERjym9AqUgmHp1LAiIftFh7PP7wK4JzDq3AJWbjdA63F0fCi9MkXRmTKjsqU3Y9BJQABIkKhoXmNEgQqs4yNQpHGVfy59MuSBKDU5Zyi75lsHtPF987qlA0ZLUQLRpKlrErUrTUivyC7bKyIUPrpjLhHybUlhDJxPu1dkHqZK1tn+8Fr+mXX/myxJcvEtSylSCbMVw+Rxaz7DnJuZousRujiTGgr3q/FM8Ijpf37OKFnuWzrkQ7IRowSJ5Wxh0ptz68xH7eywoW24ku88JEM98t6eFm2/mf5ZXnM2zJ2qGW2Nz5y4L9WqvlM9seYsqMyZUdlyo6KlyVai6MC1lq8BhZfpMbWA3mtTuwAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;wnd app='acme-system3.exe' ctrlname='Dashboard' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="512,90" sap2010:WorkflowViewState.IdRef="Delay_2" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'WindowsForms10.EDIT.app…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="512,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="c279c483-3592-4dbe-90aa-1581ab31704e" Text="[in_ClientID]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="26, 163, 696, 24" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'WindowsForms10.EDIT.app…'" FullSelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='textBox1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='textBox1' /&gt;" Guid="05797b94-b9a9-480e-9dde-8e93b6c3f468" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAArwAAAAcCAYAAACDOWyEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADySURBVHhe7daxDcIwFEXRTMNqLMFwdEwBNBESkCjuXRi5oXEWyNM50q3+H+BNpZQmSZIkpWbwSpIkKbr/4N22ra3r2pZlkSRJkg5b37TP13ccvP1Ya20AAHBkfdM+5s/+4AUAgAT3+W3wAgCQy+AFACCawQsAQDSDFwCAaAYvAADRDF4AAKIZvAAARDN4AQCIZvACABDN4AUAIJrBCwBANIMXAIBoBi8AANEMXgAAohm8AABEM3gBAIhm8AIAEM3gBQAgmsELAEC03cE7na+SJElSTMPgPV1uu4+SJEnS0erbdhi8kiRJUmIGryRJkoIr7Qdm1IAieJkS5wAAAABJRU5ErkJggg==" InformativeScreenshot="2788cea20d57b0fe24be5fca28ebb231.png" ScopeSelectorArgument="&lt;wnd app='acme-system3.exe' ctrlname='SearchingClient' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="checked" DisplayName="Get Attribute of Include inactive clients" sap:VirtualizedContainerService.HintSize="512,203" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
+              <ui:GetAttribute.Result>
+                <OutArgument x:TypeArguments="x:Boolean">[checked_input]</OutArgument>
+              </ui:GetAttribute.Result>
+              <ui:GetAttribute.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="849ca55e-66cb-454f-8e55-f22b751e1d73" InformativeScreenshot="91ea0fca039bec2c3f86e0a56220d15f" Selector="&lt;wnd app='acme-system3.exe' ctrlname='SearchingClient' /&gt;&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='checkBox1' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:GetAttribute.Target>
+            </ui:GetAttribute>
+            <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="512,441" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+              <ui:IfElseIf.ConditionBlocks>
+                <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                  <ui:IfElseIfBlock BlockType="If" Condition="[Not checked_input]">
+                    <ui:IfElseIfBlock.Then>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,245" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ClickType="Single" DisplayName="Click 'Include inactive clients'" sap:VirtualizedContainerService.HintSize="358,157" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c279c483-3592-4dbe-90aa-1581ab31704e" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="26, 208, 148, 19" DesignTimeScaleFactor="1" ElementType="CheckBox" FriendlyName="'Include inactive clients'" FullSelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='checkBox1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='checkBox1' check:fulltext='Include inactive clients' /&gt;" Guid="297ffdef-ef86-47a8-a7c1-6df7529ec915" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJgAAAAXCAYAAAD3JIYsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALTSURBVGhD7ZlLksIgEIZzKs5DudSDcAVd6VKLu+QObl1Z5QGYbiCkOwGCM+JiqhdfDRH66S+hmOH5fDpB6IUITOiKCEzoighM6AoT2O12c4fDwe12uyI4f7lcmBNBKJEEdj6f3el0co/Hw71eryL3+90dj0cvRupIEHIkgeHOhOLJiWoJihDXU0eCkCMJDF9/OTGVwPXUEWM0Tg3a2dxcE9bpX9mjnXJmzM2V+G2sd+kdh/r/Vk3biMB68uc+vMOHRfWh3EVgPRGBfUFgcWyMhr+DGwBlxrR2JJ8PCmy8OEizVoVyEY2W+NUKxvm5AT7Xdo47s46VzxXWqclX9FetY3QmrUf/MU6lnrZ8G3rGxhW/xXqXudNn7LMN9g18SWCYuHVjeo4igMKxgCQIo9zgkycNqnwhqUGTvSW+cU6Z2Hx8tr5J2sZn5q8hV2YT5pJdqY6YX8h9jmM1yQNtp7Ut+bb0bFlTya/Pr1AvyX2OEew12Kz7mOdrO1goHMEEQxGYON3NZhYNqtinwnNz0Igl63htsfDZ7xzkl4y7QbUO5o/EmUQF40lsrfk29YyMq35r9dI5PwY72C01ijH2o4X/LTA2V6ItlhdFeh3xuWIdzB+Jk2zn+dZ8m3pGxlW/tXpXc+ALd7/4On17B8N7ra1L1gm8L6veg9HkakU0b/dxPa7xNtx++tLZnI8L43TeAD9Nr8h8riE3E14lQDjX8DxSjlMdzB+tKaxRioilNd9SrFXPaE0Fv5V66dwUI9QO5zHYdfMiX5MEhjfzeEO/ddmKIsR1ePNPHTFo4rUi4Hn7wBoLjGuUwbNP3l5p8qXjHJ7J0iuNH8pnll9GKVdsLMljGatQRzgc4zpeU4g123sfTfmWY2UFhutLfqv10tyXtc8/tC2SwBD8H+N+v/evvxI4f71emRNBKMEEJgifRgQmdEUEJnRFBCZ0RQQmdEUEJnTk6X4AVySOW8tuuDoAAAAASUVORK5CYII=" InformativeScreenshot="d4b43a50e014d7ea7fc096986632ab53.png" ScopeSelectorArgument="&lt;wnd app='acme-system3.exe' ctrlname='SearchingClient' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </ui:IfElseIfBlock.Then>
+                  </ui:IfElseIfBlock>
+                </sc:BindingList>
+              </ui:IfElseIf.ConditionBlocks>
+            </ui:IfElseIf>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="512,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c279c483-3592-4dbe-90aa-1581ab31704e" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="602, 200, 120, 35" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Search'" FullSelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='button1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='groupBox1' /&gt;&lt;wnd ctrlname='button1' check:text='Search' /&gt;" Guid="b0a0a14d-dbed-4292-b677-a9a5a1424f3f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHwAAAAnCAYAAADNVyyKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI+SURBVHhe7Zs9jsIwEEZzLR/I5/Fp3IC4AUiICvkAIBAFNQjNeiYxOImVLdBmMfMVrwj+ieTn+WIKN9frlYAeIFwZEK6MkfDL5UL7/Z52ux1tt1tQKSEEcTn02xPOHVj08Xik+/1Oj8cDVAi7O51O4nIovSecd8X5fC5OAurjcDhIWueOe8I5Cm63W3EwqA92yVWeOx4JLw0E9cJOc8cQ/uVAuDIgXBkQrgwIVwaEKwPClQHhyqhbePBkTUNN02Kso1Dq9xcER6ax5EttH0zFwqPsKNm60D0H8s5QY2aSDuEzU1xw3gSGXMh/+yMgfG4COY5zY8l5T6EgOXgbpaTIN2R9SoP+p0DaUlKIyPhsY1p0QoPL5onv8/yuTrjL2swzbT6XioUzHONxwQ3L6cQlqSwkxrvIkWcvG8T6NDYj9rWpWjvhLs0TNw2LT6kR+LNhfdePJcfNlo+bI13eoHLhfdqKbhddxHSVl5OqUKp2UOUiS8S9oprnKVbuoN+sn5M3qFc4V17hgOZtW8XPShy0CzK2i2b5LZMF4eWB/w8vcBapkeCzWE0R+4z49rv92gyvzZInw0jkZKRD+LwM/ofLAS5bcNkAz/bsYMYHPjmUtW3GTgjneSYObRAOPhoIVwaEKwPClQHhyoBwZUC4MiaF8y0F3Dz5HtjlpHC+h8T3kUqDQX3whUK+L5g77glPt0e5Iyq9XtgdF+6vt0cZ7rDZbGi5XNJisQAVslqtaL1ej2QzI+Hgu4FwZUC4Kq70A/o5YRaHBJ1kAAAAAElFTkSuQmCC" InformativeScreenshot="b2c763012bec2b8422c1bc9274705aec.png" ScopeSelectorArgument="&lt;wnd app='acme-system3.exe' ctrlname='SearchingClient' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="512,90" sap2010:WorkflowViewState.IdRef="Delay_3" />
+            <Assign sap:VirtualizedContainerService.HintSize="512,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[client_id]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[in_ClientID]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="512,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[client_id]" />
+            <uix:NClick ClickType="Double" DisplayName="Click Client Details" sap:VirtualizedContainerService.HintSize="512,157" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c279c483-3592-4dbe-90aa-1581ab31704e" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable Accuracy="0.5" DesignTimeRectangle="22, 273, 675, 19" DesignTimeScaleFactor="1" ElementType="ListItem" FriendlyName="'BL17488'" FullSelectorArgument="[string.Format(&quot;&lt;wnd ctrlname='listView1' /&gt;&lt;ctrl name='{0}' role='list item' /&gt;&quot;, client_id)]" FuzzyAccuracy="0.8" FuzzySelectorArgument="[string.Format(&quot;&lt;wnd ctrlname='listView1' /&gt;&lt;ctrl name='{0}' role='list item' automationid='' /&gt;&quot;, client_id)]" Guid="c0ea62b8-2f5f-4d86-9c14-fdcec93a2235" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAqcAAAAXCAYAAAA2sOZYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAaXSURBVHhe7Zs9cvM4DIa/c/lAPsPW22yb3MIncJtTeLbwjDs3nhSZdKm0AEVS4B9EWmJseV/MPBOLFH8EgeAr2fnz9z9vA6zerter/QSDwWDPbchXsB6GuIL1MBlXEKeNhkUJg8G2YshXsB6GuIL1sCpx+uevf0GBr6+vbDkAADwbyFegB4gr0AOOK6NBIU7bwaIEAGwF5CvQA8QV6AHE6QKwKAEAWwH5CvQAcQV6AHG6ACxKAMBWQL4CPUBcgR5AnC4AixIAsBWQr0APEFegBxCnC8CiBABsBeQr0APEFehBgzi9Dkdb5u32PezfZf3P8OaPc1yG/cfPMJyuvmzHx1mjvoO2mf7fP4ezPXtoqVuJ8qK8DG+3wrhuXrfPYSfLc5hzYz/UwL4qtHunOjO30c6ninmoKGMBAJ6Gcr7iNRxZkNsBKKOK09X3mxwcv617/D1tfpNUK4U8+/yX0yhOQ2cYYelFlu4sJ0LPHKhFh4/wueePS1C2P3Fr2T+PNwzHw3je7vBNR04kaXXrMS9O6Xqj6/Bi/CHi1PrFz8kugNa5BPMqjQUAeCZ0carldgDKzD30FPebu/e3mDR+57mnze9Qo5VSPfR6LBKnqUipcBYLRVWcpv2MYvUzLE8CW7TT6nzZcubE6ZHmfA4SPJfTPD7IB48Qp9n+Kn0j2wb9FMYCADwVLeL0/twD/m8U42puv1ktxir3sIB72vwyBa2U1UMvyCJxahS+d17lzZ4Rp2GfBAewEXJp//vT9IbV3DDRTqtbi1lxenB/bTlfO1+L+2vOpeuyb1lH+5meNO3iPdK1JHUE9yN/uuDeFI/3Irfo7Rvd2/fwdrgOu/heJcnC+dy2M0a+9J/53HCs8pwAAI+kRZwGedjkBVrLJg/ZNV/KWS7HWJN5N5sbijnHHYNnZ24fzO83Mk7o/jfFWBhLZ97rfczo7SaUONNi0tbxCyY/fmlPvt0zLwH1lWglHr+gh16NRnEam3ROpbNyDvfEfXAAi5ub9E9ldMM5OM1vpHz5XN06zIvTMMnzq3gTyOyD0ptTCj4v9sxCEMHPv9+hYyN2bZD634VRnRtz9FXpmi/DnhcW+XU0u0lwnV142qKc5uXOE2OpcwIAPBJdnMYmcq1Z73RcetCkepcDQlEb5atcn3TMedHnCHV/AM9IOa6YS91+0xBjrp2Lpd1hiiW1XYDY2+I6OS9DvA/ynkxi258r65bOS5CshTk99Fo0itPIGcbBjc5Skk+Q2Ozx9FQS90/H8kf75ofX7mZrdetRI07HefNc7F+uj8Tpzixe63Bj9jptsMt5O4FrfJWx0V9irBnGJ73SeNxPpi44bxpLn5PrEwDwCHRxGuVumdszeUjPWWSUb4+8gds+49zOBA/rti4QqmAT6OI0pLjfNMRYGkth/BZj05+ftglI5lLYB6O6deYliLQS91/WQ6/HMnFKTMmk0lmRwyfi9vK1f2g8npbs1EQoypZSJ07t2Pzk6ObEPnDi1HymYPfXLfyQWbDaNU5wH2E7gxxX4O9h7aIMzpvG0ucEAHgkTeKUKOYFLWfZc3b8rQlvxhX5emqf5jvw/BTjqmW/aYixNJZE/FXEpl5OJHEozlXq1pmXgNv4/nQ9lLR9AZaJU3OjXFmFs5nA4RPzwibqn/uRxzQX/xWSVuf7W06tOA39RJhAHRfteN3iLSrVhU+W9Fl8DeJ9kNSRf/yY7Cu5gBxczhuC/UqCCL96CH3Mc/F+NOPZPuVnOZY6JwDAI2kSp24tx2uf0HKWy+NjHeVBJ0Blf1wXHXM7foBf+wUC6I8eV8p+I+OqIcbG/Z3OdbEj9im1nS0bycR8oa64D8bnrjIvAbcvaiJt/q9BoziNTfx+JFtPFjs36/CL+V2K7uj0Zow32Fn4A2Otbi2qxWkM+8A/UXICp8C1dj6JoLUJfPoqQPqbr5HqZZ2/RvaVXEACKxi90dNc4FNeRNbC/wgcfz/K47zxWxHxWY5VnhMA4JHMiYjQRK5JNmQlZyV18YbsLMxlLtfJXAS2QTmuCHW/EfuIEa21Mcb71BRLevyF7SZyMU9mtUlxH9TEqWkXzmuqq52XIKuVHOG4r0iDOAUx6qIEAIAnAvkK9ABxVSAR3KAFiNMFYFECALYC8hXoAeLKob0lBq1AnC4AixIAsBWQr0APEFegB4k45QIAAAAAAAAeSfHNKaxs7DgYDAbbgiFfwXoY4grWw1xcQZzeYViUMBhsK4Z8BethiCtYDxvjahj+A9laMaHyoXT3AAAAAElFTkSuQmCC" InformativeScreenshot="94662f6700a886e8a762963f3932571a.png" ScopeSelectorArgument="&lt;wnd app='acme-system3.exe' ctrlname='SearchingClient' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="512,90" sap2010:WorkflowViewState.IdRef="Delay_5" />
+            <uix:NClick ClickType="Single" DisplayName="Click 'Client Accounts'" sap:VirtualizedContainerService.HintSize="512,157" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c279c483-3592-4dbe-90aa-1581ab31704e" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="20, 392, 230, 38" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Client Accounts'" FullSelectorArgument="&lt;wnd ctrlname='button1' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlname='button1' check:text='Client Accounts' /&gt;" Guid="8b823215-ddea-4793-ac64-0970132c4639" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOoAAAAqCAYAAAC9fMf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM2SURBVHhe7d2/TtwwHMDxvAHPE4k3uOfI1G5dOkGfgGxs7VtkoVKrlgdohSoGIwa2IjjpFpZWJ9c/x87Z5B8QCHH1HT7SHXe5+JC/Z3MMyTabjQawbIQKJIBQgQS0Qj27Wuv94wu99+FcZ+9/AZjR6uOlbfB+l1Go8gQJ9PDztV7f/dXb7RbATKS5o9MbvXd43oo1CnX16VKXp7edLwJgHgcnv+2uNmwzClWWXlZS4HWt7/7YVTVqM7pjQu06EMC8pMWozegOoQKLQKhAAggVSAChAgkgVCABhAokgFCBBBAqkABCBRJAqJMpXRW5zrKslhe6Uv6xSheZud+6/UKqwowh12VzfvwvCHWiqjBxFpVW7r6ysbxQnKrU+cDr2bGYD4u8VJ2Pv5qRcWMcoU7RMwElmKKS23OGKucyq2lpPijysvngWARCnYxQJ1Cl2fKa1bTrsVr/1ldW3txvl01gReVWQTepJTj/eL1CKl3m/vkdk16Os4G6YIPtrwpeK9ya9/58ZGy7cwfnevC4w/vmOYO/P3iEOsGTQ3VRNX/LqspOXrsK2wkvk9xtp+39OIZWpIaMxW95ZUVvtr9uK+7Dbcbc9/PwfHL84Pnvhzo+7uh3Zt53YY6pdx8YQqgTPDVUe5xbUUI2rtEYwsc8WaWCuCRCt/2VczXRBoZ+fv89NeE/amw9j9nb5v2aFbyQqP2YMYhQp+gJZ7eiDYTaF/ijYnD85I/UxywuVEfJLsJtk1lRxxHqRDKJZWKPf+sb3LYT10zi5m8/81i09X34hLfnHIrrObe+4VjkGPsafWPrHrc/T/37MjuB5kPNH4cuhDpZ+/+ozSTvC9VQlZm8zZcqudkG+mgHJry5XX8Rs4vFf1nTWpWi7e8zfZlkj9m917wsO2Osn9s3bokzeI1iYd9QLxShAgkgVCABhAokgFCBBBAqkABCBRJAqEACCBVIAKECCRgMVS65yEWigNclF4kaDFUu9XZwct15MIB5HH2/sRc0DtuMQj27urWrqlxMlZUVmJc0J9dGlQalxbDNKFQhT1gd/9TZ2686e/MFwEz23n3T++WPVqSiFSqA5SFUIAGECizeRv8DCQlNPNAC8v4AAAAASUVORK5CYII=" InformativeScreenshot="db888ea35410b48828b8e1283e889d8b.png" ScopeSelectorArgument="&lt;wnd app='acme-system3.exe' ctrlname='ClientDetails' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="512,90" sap2010:WorkflowViewState.IdRef="Delay_4" />
+            <Sequence DisplayName="Screen Scraping" sap:VirtualizedContainerService.HintSize="715,457" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'ClientAcc Acme syst'" sap:VirtualizedContainerService.HintSize="434,342" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="50d8e37dbe153119b03792b57a943186" Selector="&lt;wnd app='acme-system3.exe' ctrlname='ClientAccounts' /&gt;">
+                <ui:WindowScope.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,195" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Get Visible Text 'WindowsForms10.SysListV...'" FormattedText="False" sap:VirtualizedContainerService.HintSize="358,107" sap2010:WorkflowViewState.IdRef="GetVisibleText_1">
+                        <ui:GetVisibleText.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b7011ec2-ba9e-486b-abfa-72f9285d776a" InformativeScreenshot="a469c6827c306e6871ff67d5616e5d6e" Selector="&lt;wnd ctrlname='listView1' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:GetVisibleText.Target>
+                        <ui:GetVisibleText.Text>
+                          <OutArgument x:TypeArguments="ui:GenericValue">[WindowsformsSyslistv]</OutArgument>
+                        </ui:GetVisibleText.Text>
+                      </ui:GetVisibleText>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:WindowScope.Body>
+              </ui:WindowScope>
+            </Sequence>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="715,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[WindowsformsSyslistv.ToString]" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="715,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,289" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="False" ColumnSeparators="&#x9; " DataTable="[data_table]" DisplayName="Generate Data Table" sap:VirtualizedContainerService.HintSize="358,201" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[WindowsformsSyslistv.ToString]" UseColumnHeader="True" />
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:Matches BuilderPattern="\-?\d{3,}\s(USD|CAD|RON)" DisplayName="Matches to Amount and Currency" sap:VirtualizedContainerService.HintSize="715,60" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[WindowsformsSyslistv.ToString]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;\\-?\\d{3,}\\s(USD|CAD|RON)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="\-?\d{3,}\s(USD|CAD|RON)" RegexOption="IgnoreCase, Compiled" Result="[outputRegex]" />
+            <Assign sap:VirtualizedContainerService.HintSize="715,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Decimal">[out_totalAmt]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">0</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="715,1514" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[outputRegex]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="str:Match">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="str:Match" Name="currentItem" />
+                  </ActivityAction.Argument>
+                  <Sequence sap:VirtualizedContainerService.HintSize="679,1388" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="637,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[currentItem]" />
+                    <ui:IfElseIf DisplayName="Conversion of all currency to USD" sap:VirtualizedContainerService.HintSize="527,1164" sap2010:WorkflowViewState.IdRef="IfElseIf_4">
+                      <ui:IfElseIf.ConditionBlocks>
+                        <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                          <ui:IfElseIfBlock BlockType="If" Condition="[LTrim(currentItem.ToString).Split(&quot; &quot;c)(1).Equals(&quot;EUR&quot;)]">
+                            <ui:IfElseIfBlock.Then>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign DisplayName="Convert EUR to USD" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Decimal">[out_totalAmt]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Decimal">[out_totalAmt + CDEC(CDEC(LTrim(currentItem.ToString).Split(" "c)(0))*1.06)]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </ui:IfElseIfBlock.Then>
+                          </ui:IfElseIfBlock>
+                          <ui:IfElseIfBlock BlockType="ElseIf" Condition="[LTrim(currentItem.ToString).Split(&quot; &quot;c)(1).Equals(&quot;RON&quot;)]">
+                            <ui:IfElseIfBlock.Then>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign DisplayName="Convert RON to USD" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Decimal">[out_totalAmt]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Decimal">[out_totalAmt + CDEC(CDEC(LTrim(currentItem.ToString).Split(" "c)(0))*0.22)]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </ui:IfElseIfBlock.Then>
+                          </ui:IfElseIfBlock>
+                          <ui:IfElseIfBlock BlockType="ElseIf" Condition="[LTrim(currentItem.ToString).Split(&quot; &quot;c)(1).Equals(&quot;CAN&quot;)]">
+                            <ui:IfElseIfBlock.Then>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign DisplayName="Convert CAN to USD" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Decimal">[out_totalAmt]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Decimal">[out_totalAmt + CDEC(CDEC(LTrim(currentItem.ToString).Split(" "c)(0))*0.74)]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </ui:IfElseIfBlock.Then>
+                          </ui:IfElseIfBlock>
+                          <ui:IfElseIfBlock BlockType="Else">
+                            <ui:IfElseIfBlock.Then>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Decimal">[out_totalAmt]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Decimal">[out_totalAmt + CDEC(LTrim(currentItem.ToString).Split(" "c)(0))]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </ui:IfElseIfBlock.Then>
+                          </ui:IfElseIfBlock>
+                        </sc:BindingList>
+                      </ui:IfElseIf.ConditionBlocks>
+                    </ui:IfElseIf>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="715,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[out_totalAmt.ToString]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" ContentHash="a8_8dbifhku26LdHYsR8uQ" FilePath="C:\Users\Admin\Documents\ACME-System3-v0.1\ACME-System3-v0.1\acme-system3.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI2SURBVFhH7ZddTxNBFIZ71W+Kpf4FvTT+LUErurUfoIgi+E2LF024IunvEAFZFURRa0GKCIk/ozfHc87szA7sTDoXmpLYSZ7sZps9z/uevWpseIanVvHqtUoJBoNXxwCmH/4uvu8brwQH6PV6A+H8BWi1WtBsNhm6l8+vrvyGi69OkGMoLCGNX8gRFOrETxhbRF4ewtgLogv55124snzUd67zBgpLJAylLFTSrpLmn/2A/NMQ0ywd9wDGlgcoJALhk324QDzeY0YXOsZZOpEAtlXJpqKlRbqA0vnvgkdEu+9c5w2Eq5VCKe1oQmSujXyD3EPkwVfjLB3nAGHLjmAexUrYZuEoS5HZLzByn9g1ztKJBLCt6uxqc1pLRkmRmV0YufeZ6TfXeQN604iUhDMoRLJ3PwXsQHZ6xzhLxzmAEiI5JZVNUYgySWbqI2RqSHXbOEsnEsC2Kr1ploTUUkpZuC1AaaayBenyB0a+b8N5A9RUrjU7JVsGQpYKYbr8HtJ3kNI7xjRLxzkAtTzVlFpKKQkDUp4PqdvEJmOapRMJYPsEmaoQqqZSii1THhFIb21CcvKt4OaGet+G8wakNBWsVglZKoVCmiyuQ+IGsWacpeMegMSBNEktlXQDEihMFvGKQub6G0hMIOOrxlk6kQC2T8CrPSNlMQuldBXiKI2Pv4b4NYF834bzBi7PbomWxdMt4ywNhTqXpn3jLB3nAP+K8xGgWvYadDMIquVSI/h3MDz/7YnF/gBEr1F6yQaRCwAAAABJRU5ErkJggg==" InformativeScreenshot="a39fa4fda49784313f415ed89c93cef3.png" Reference="H4rpYSnGxECKWRw3OdvvNQ/JwB7Z9m0NUW3q-A81SZLvw" Selector="&lt;wnd app='acme-system3.exe' ctrlname='Login' /&gt;" Title="ACME System3" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="791,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="685,1393" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[data_table]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="643,1305" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="569,1190" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="527,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[CurrentRow(data_table.Columns(3).ColumnName).ToString + &quot; &quot; + CurrentRow(data_table.Columns(4).ColumnName).ToString]" />
+                  <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="527,970" sap2010:WorkflowViewState.IdRef="IfElseIf_3">
+                    <ui:IfElseIf.ConditionBlocks>
+                      <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                        <ui:IfElseIfBlock BlockType="If" Condition="[CurrentRow(data_table.Columns(4).ColumnName).ToString.Equals(&quot;EUR&quot;) or CurrentRow(data_table.Columns(3).ColumnName).ToString.Contains(&quot;EUR&quot;)]">
+                          <ui:IfElseIfBlock.Then>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,272" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,184" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                <TryCatch.Try>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Decimal">[out_totalAmt]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Decimal">[CDEC(total_amt + (CINT(CurrentRow(data_table.Columns(3).ColumnName))*1.06))]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </TryCatch.Try>
+                                <TryCatch.Catches>
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:Exception">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Decimal">[out_totalAmt]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Decimal">[CDEC(total_amt + (CINT(CurrentRow(data_table.Columns(3).ColumnName))*1.06))]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </ActivityAction>
+                                  </Catch>
+                                </TryCatch.Catches>
+                              </TryCatch>
+                            </Sequence>
+                          </ui:IfElseIfBlock.Then>
+                        </ui:IfElseIfBlock>
+                        <ui:IfElseIfBlock BlockType="ElseIf" Condition="[CurrentRow(data_table.Columns(4).ColumnName).ToString.Equals(&quot;RON&quot;)]">
+                          <ui:IfElseIfBlock.Then>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Decimal">[out_totalAmt]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Decimal">[CDEC(total_amt + (CINT(CurrentRow(data_table.Columns(3).ColumnName))*0.22))]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </ui:IfElseIfBlock.Then>
+                        </ui:IfElseIfBlock>
+                        <ui:IfElseIfBlock BlockType="Else">
+                          <ui:IfElseIfBlock.Then>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Decimal">[out_totalAmt]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Decimal">[CDEC(total_amt + CINT(CurrentRow(data_table.Columns(3).ColumnName)))]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </ui:IfElseIfBlock.Then>
+                        </ui:IfElseIfBlock>
+                      </sc:BindingList>
+                    </ui:IfElseIf.ConditionBlocks>
+                  </ui:IfElseIf>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEachRow.Body>
+          </ui:ForEachRow>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="791,159" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,80" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+  </Sequence>
+</Activity>

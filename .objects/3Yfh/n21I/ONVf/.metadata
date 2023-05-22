@@ -1,0 +1,12 @@
+﻿{
+  "Id": "ONVfyAw3A0WfQKLZ20WHRQ",
+  "Reference": "H4rpYSnGxECKWRw3OdvvNQ/ONVfyAw3A0WfQKLZ20WHRQ",
+  "ParentRef": "H4rpYSnGxECKWRw3OdvvNQ/n21Is28vjUCKR0eEdfuL_g",
+  "Name": "Edge: ACME System 1",
+  "Type": "Screen",
+  "Created": "2022-12-28T07:36:21.0227297Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.12.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-12-28T07:36:21.0227297Z"
+}
